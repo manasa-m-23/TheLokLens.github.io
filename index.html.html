@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Georgia; background-color: #fff3c2; /* light crimson/pink */
+  margin: 0;
+padding:0;
+}
+
+  .header-images {
+  display: flex;
+  width: 100%;
+  height: 33vh;   /* 1/3 of screen height */
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  width: 30%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+}
+
+.banner {
+  width: 75%;
+  height: 100%;
+  object-fit: cover;
+  margin:0;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #cedeeb;
+  background-color: #8c3839;
+  display:flex; 
+  width:100%; 
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color: white;
+  font-size: 25px;
+  flex: 1; 
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #cedeeb;
+  color: black
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #cedeeb;
+  color: black;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #fffcfc;
+  border-top: none;
+}
+.accordion {
+        background-color: #8c3839;
+        color: #fdfafa;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: 2px double black;
+        text-align: center;
+        outline: none;
+        font-size: 22px;
+        transition: 0.4s;
+      }
+      
+      .active, .accordion:hover {
+        background-color: #2b4743;
+      }
+      
+      .accordion:after {
+        content: '\002B';
+        color: #000000;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+        size: 10px;
+      }
+      
+      .active:after {
+        content: "\2212";
+        color: black
+      }
+      
+      .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+      }
+      </style>
+</head>
+
+
+<body>
+  <div class="header-images">
+  <img src="Logo.png" alt="LokLens Logo" class="logo">
+  <img src="Banner.png" alt="LokLens Banner" class="banner">
+</div>
+
+
+<div class="tab">
+  <button class="tablinks" onclick="opensection(event, 'About')">About </button>
+  <button class="tablinks" onclick="opensection(event, 'Policy Briefs')">Policy Briefs</button>
+  <button class="tablinks" onclick="opensection(event, 'Data Stories')">Data Stories</button>
+  <button class="tablinks" onclick="opensection(event, 'Policy Analytics Lab')">Policy Analytics Lab</button>
+  <button class="tablinks" onclick="opensection(event, 'Get Involved')">Get Involved</button>
+</div>
+
+<div id="About" class="tabcontent">
+  
+  <center><h3 style= "font-size: 40px;" >About</h3> </center>
+  <h3>Making Public Policy Understandable Through Research, Data & Analytics</h3><p>LokLens is an independent initiative dedicated to transforming complex public policy issues into accessible, evidence-based insights through research, data visualization, and policy analytics.
+</p>
+    
+      <button class="accordion">Vision Statement</button>
+      <div class="panel">
+        <p style= "font-size: 20px;"> “A society where people clearly understand the civic issues that shape their lives and are empowered to engage with them thoughtfully.”</p>
+      </div>
+      
+      <button class="accordion">Mission</button>
+      <div class="panel">
+        <p style ="font-size: 20px;"> “To create accessible, citizen-focused learning spaces that explore public issues through data, dialogue, discussions and shared insight that enable people to better understand challenges and contribute to informed civic awareness.”</p>
+      </div>
+      
+      
+      <script>
+      var acc = document.getElementsByClassName("accordion");
+      var i;
+      
+      for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+          } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+          } 
+        });
+      }
+      </script>
+      
+  </p>
+
+</div>
+
+<div id="Policy Briefs" class="tabcontent">
+  <center><h3 style= "font-size: 40px;">Policy Briefs</h3></center>
+  <h3>Delivering concise, evidence-based analyses of contemporary policy issues by synthesizing research and legal frameworks into accessible insights for informed civic engagement.</h3> 
+
+  <div style="background:#2b4743;
+padding:20px;
+margin-top:30px;
+border-radius:10px;
+box-shadow:0px 0px 10px rgb(255, 254, 254);">
+  <center><h2 style="color: #fff3c2;"> Explainable AI</h2>
+<a href="Policy Briefs/Explainable AI.pdf" target="_blank">
+<button>📖 Read Report</button></center>
+</a>
+</div>
+
+ <div style="background: #2b4743;
+padding:20px;
+margin-top:30px;
+border-radius:10px;
+box-shadow:0px 0px 10px rgb(247, 246, 246);">
+  <center></centre><h2 style="color: #fff3c2;"> Tribal Social Security</h2>
+<a href="Policy Briefs/Tribal Policy.pdf" target="_blank">
+<button>📖 Read Report</button> </center>
+</a>
+</div>
+</div>
+
+
+<div id="Data Stories" class="tabcontent">
+  <center><h3 style= "font-size: 40px;">Data Stories</h3></center>
+  <h3>Transforming complex public issues into compelling visual narratives through data, helping citizens explore evidence, understand trends, and engage with policy conversations more clearly.</h3>
+  <div style="background:white;
+padding:20px;
+margin-top:30px;
+border-radius:10px;
+box-shadow:0px 0px 10px gray;">
+
+<h2> Delimitation in India</h2>
+
+<p><strong>Published:</strong> July 2026</p>
+
+<p>
+A data-driven examination of demographic trends,
+parliamentary representation and the policy debate
+surrounding delimitation in India.
+</p>
+
+<a href="Data Stories/Delimitation/delimitation.pdf" target="_blank">
+<button>📖 Read Report</button>
+</a>
+
+<a href="https://github.com/manasa-m-23/Delimitation-India-Data-Story" target="_blank">
+<button>💻 GitHub</button>
+</a>
+
+</div>
+
+<div style="background:white;
+padding:20px;
+margin-top:30px;
+border-radius:10px;
+box-shadow:0px 0px 10px gray;">
+
+<h2> Heatwave Crisis in India</h2>
+
+<p><strong>Published:</strong> July 2026</p>
+
+<p>
+A data-driven examination of heatwave trends and mortality rates due to heatwaves across Indian states. 
+</p>
+
+<a href="Data Stories/Heatwaves/Heatwaves.design .pdf" target="_blank">
+<button>📖 Read Report</button>
+</a>
+
+<a href="https://github.com/manasa-m-23/Heatwave-Data_Stories" target="_blank">
+<button>💻 GitHub</button>
+</a>
+</div>
+
+  </div>
+
+
+<div id="Policy Analytics Lab" class="tabcontent">
+  <center><h3 style= "font-size: 40px;">Policy Analytics Lab</h3></center>
+  <h3>A collection of analytical projects that apply data science, statistics, and machine learning to public policy challenges, demonstrating how data can inform better governance and decision-making.</h3>
+</div>
+
+<div id="Get Involved" class="tabcontent">
+  <h2>Get Involved</h2>
+  <h3>Wish to join/volunteer/support or connect with us?</h3>
+</div>
+
+<script>
+function opensection(event, section) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("active", "");
+  }
+  document.getElementById(section).style.display = "block";
+  event.currentTarget.className += " active";
+}
+</script>
+   
+</body>
+</html> 
